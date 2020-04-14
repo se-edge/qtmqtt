@@ -44,6 +44,13 @@ QT_BEGIN_NAMESPACE
 #  define Q_MQTT_EXPORT
 #endif
 
+// Qt6 port
+#if QT_VERSION_MAJOR < 6
+using qhash_t = uint;
+#else
+using qmqtthash_t = size_t;
+#endif
+
 namespace QMqtt
 {
 enum class PayloadFormatIndicator : quint8 {
